@@ -28,7 +28,9 @@ pipeline {
 
         stage ('Deploy Stage') {
             steps {
+                 sh '''
                  sudo scp  /var/lib/jenkins/workspace/web-freestyle/webapp/target/webapp.war root@172.31.40.241:/opt/tomcat/webapps/
+                '''
                 }
             }
         
